@@ -1,12 +1,12 @@
-Summary:	Displays a periodic table of the elements.
-Summary(pl):	Wy¶wietla uk³ad okresowy pierwiastków.
+Summary:	Displays a periodic table of the elements
+Summary(pl):	Wy¶wietla uk³ad okresowy pierwiastków
 Name:		gperiodic
 Version:	1.2.6
 Release:	1
-Copyright:	GPL
-Group:		Applications/Scientific
-Group(pl):	Aplikacje/Naukowe
-Source:		ftp://ftp.seul.org/pub/gperiodic/%{name}-%{version}.tar.gz
+License:	GPL
+Group:		X11/Applications
+Group(pl):	X11/Aplikacje
+Source0:	ftp://ftp.seul.org/pub/gperiodic/%{name}-%{version}.tar.gz
 URL:		http://gperiodic.seul.org/
 BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -15,12 +15,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-Gperiodic displays a periodic table of the elements, allowing you to browse
-through the elements, and view detailed information about each element.
+Gperiodic displays a periodic table of the elements, allowing you to
+browse through the elements, and view detailed information about each
+element.
 
 %description -l pl
-Gperiodic wy¶wietla uk³ad okresowy pierwiastków. Pozwalaj±c przgl±daæ uk³ad i 
-wy¶wietla szczegó³owe informacje o pierwiastkach. 
+Gperiodic wy¶wietla uk³ad okresowy pierwiastków. Pozwalaj±c przgl±daæ
+uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 
 
 %prep
