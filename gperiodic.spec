@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.seul.org/pub/gperiodic/%{name}-%{version}.tar.gz
+# Source0-md5:	1c9be5977895c08f03147ab9e20d48f2
 Patch0:		%{name}-ac_fix.patch
 URL:		http://gperiodic.seul.org/
 BuildRequires:	autoconf
