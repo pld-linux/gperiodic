@@ -1,12 +1,12 @@
 Summary:	Displays a periodic table of the elements
 Summary(pl):	Wy¶wietla uk³ad okresowy pierwiastków
 Name:		gperiodic
-Version:	1.3.0
+Version:	1.3.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.seul.org/pub/gperiodic/%{name}-%{version}.tar.gz
-# Source0-md5:	1c9be5977895c08f03147ab9e20d48f2
+Source0:	http://gperiodic.seul.org/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	8b6344276252635b18572bca17aa62f6
 Patch0:		%{name}-ac_fix.patch
 URL:		http://gperiodic.seul.org/
 BuildRequires:	autoconf
@@ -24,11 +24,11 @@ browse through the elements, and view detailed information about each
 element.
 
 %description -l pl
-Gperiodic wy¶wietla uk³ad okresowy pierwiastków. Pozwalaj±c przgl±daæ
+Gperiodic wy¶wietla uk³ad okresowy pierwiastków. Pozwala przegl±daæ
 uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 
 %prep
-%setup -q -n gperiodic
+%setup -q
 %patch -p1
 
 %build
@@ -40,13 +40,15 @@ rm -f missing
 %{__automake}
 %configure
 
-%{__make} gperiodic_LDADD="-lreadline"
+%{__make} \
+	gperiodic_LDADD="-lreadline"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
