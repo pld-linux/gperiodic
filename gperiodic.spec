@@ -33,7 +33,7 @@ uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 %patch -p1
 
 %build
-libtoolize --copy --force
+%{__libtoolize}
 gettextize --copy --force
 aclocal
 %{__autoconf}
