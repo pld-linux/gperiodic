@@ -7,7 +7,7 @@ Group:		Applications/Scientific
 Source:		ftp://ftp.seul.org/pub/gperiodic/%{name}-%{version}.tar.gz
 URL:		http://gperiodic.seul.org/
 BuildRequires:	gettext-devel
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
