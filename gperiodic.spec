@@ -16,8 +16,6 @@ BuildRequires:	libtool
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Gperiodic displays a periodic table of the elements, allowing you to
