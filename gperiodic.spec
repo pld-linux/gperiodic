@@ -45,11 +45,11 @@ automake -a -c -f
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__install} -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-%{__install} man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf README ChangeLog
 
