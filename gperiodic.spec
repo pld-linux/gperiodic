@@ -31,7 +31,6 @@ uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 aclocal
 autoconf
 echo "n" | gettextize --copy --force
-LDFLAGS="-s"; export LDFLAGS
 %configure
 
 %{__make}
@@ -41,8 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	README Changes
+gzip -9nf README Changes
 
 %find_lang %{name}
 
