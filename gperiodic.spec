@@ -34,7 +34,7 @@ uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 
 %build
 %{__libtoolize}
-gettextize --copy --force
+%{__gettextize}
 aclocal
 %{__autoconf}
 rm -f missing
