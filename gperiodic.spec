@@ -36,9 +36,9 @@ uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 libtoolize --copy --force
 gettextize --copy --force
 aclocal
-autoconf
+%{__autoconf}
 rm -f missing
-automake -a -c -f
+%{__automake}
 %configure
 
 %{__make} gperiodic_LDADD="-lreadline"
