@@ -1,35 +1,48 @@
-Summary: Displays a periodic table of the elements.
-Name: gperiodic
-Version: 1.2.6
-Release: 1
-Copyright: GPL
-Group: Applications/Scientific
-Source: ftp://ftp.seul.org/pub/gperiodic/gperiodic-1.2.6.tar.gz
-URL: http://gperiodic.seul.org/
-Buildroot: /var/tmp/gperiodic
+Summary:	Displays a periodic table of the elements.
+Name:		gperiodic
+Version:	1.2.6
+Release:	1
+Copyright:	GPL
+Group:		Applications/Scientific
+Source:		ftp://ftp.seul.org/pub/gperiodic/%{name}-%{version}.tar.gz
+URL:		http://gperiodic.seul.org/
+BuildRequires:	gettext-devel
+Buildroot:	/tmp/%{name}-%{version}-root
+
+%define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 
 %description
-Gperiodic displays a periodic table of the elements, allowing you to
-browse through the elements, and view detailed information about each
-element.
+Gperiodic displays a periodic table of the elements, allowing you to browse
+through the elements, and view detailed information about each element.
 
 %prep
-%setup -n gperiodic
+%setup -q -n gperiodic
+
 %build
-./configure
+aclocal
+autoconf
+echo "n" | gettextize --copy --force
+LDFLAGS="-s"; export LDFLAGS
+%configure
+
 make
 
 %install
-mkdir -p $RPM_BUILD_ROOT/usr/bin
-mkdir -p $RPM_BUILD_ROOT/usr/man/man1
-install -m 755 src/gperiodic $RPM_BUILD_ROOT/usr/bin/gperiodic
-install -m 755 man/gperiodic.1 $RPM_BUILD_ROOT/usr/man/man1/gperiodic.1
+rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-,root,root)
-%doc README Changes
-/usr/bin/gperiodic
-/usr/man/man1/gperiodic.1
+make install DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	README Changes
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc README Changes
+%attr(755,root,root) %{_bindir}/*
+%{_mandir}/man1/*
