@@ -33,11 +33,11 @@ uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 %patch -p1
 
 %build
+rm -f missing
 %{__libtoolize}
 %{__gettextize}
-aclocal
+%{__aclocal}
 %{__autoconf}
-rm -f missing
 %{__automake}
 %configure
 
@@ -51,8 +51,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf README ChangeLog
-
 %find_lang %{name}
 
 %clean
@@ -60,6 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
