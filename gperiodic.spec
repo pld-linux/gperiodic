@@ -2,7 +2,7 @@ Summary:	Displays a periodic table of the elements
 Summary(pl):	Wy¶wietla uk³ad okresowy pierwiastków
 Name:		gperiodic
 Version:	1.3.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://gperiodic.seul.org/downloads/%{name}-%{version}.tar.gz
