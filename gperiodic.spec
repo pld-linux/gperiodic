@@ -29,7 +29,7 @@ uk³ad i wy¶wietla szczegó³owe informacje o pierwiastkach.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
 rm -f missing
