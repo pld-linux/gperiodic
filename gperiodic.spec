@@ -1,5 +1,5 @@
 Summary:	Displays a periodic table of the elements
-Summary(pl):	Wy∂wietla uk≥ad okresowy pierwiastkÛw
+Summary(pl.UTF-8):   Wy≈õwietla uk≈Çad okresowy pierwiastk√≥w
 Name:		gperiodic
 Version:	1.3.3
 Release:	2
@@ -23,9 +23,9 @@ Gperiodic displays a periodic table of the elements, allowing you to
 browse through the elements, and view detailed information about each
 element.
 
-%description -l pl
-Gperiodic wy∂wietla uk≥ad okresowy pierwiastkÛw. Pozwala przegl±daÊ
-uk≥ad i wy∂wietla szczegÛ≥owe informacje o pierwiastkach.
+%description -l pl.UTF-8
+Gperiodic wy≈õwietla uk≈Çad okresowy pierwiastk√≥w. Pozwala przeglƒÖdaƒá
+uk≈Çad i wy≈õwietla szczeg√≥≈Çowe informacje o pierwiastkach.
 
 %prep
 %setup -q
