@@ -1,5 +1,5 @@
 Summary:	Displays a periodic table of the elements
-Summary(pl.UTF-8):   Wyświetla układ okresowy pierwiastków
+Summary(pl.UTF-8):	Wyświetla układ okresowy pierwiastków
 Name:		gperiodic
 Version:	1.3.3
 Release:	2
