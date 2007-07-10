@@ -4,13 +4,13 @@ Name:		gperiodic
 Version:	2.0.9
 Release:	1
 License:	GPL
-Group:		X11/Applications
+Group:		X11/Applications/Science
 Source0:	http://www.frantz.fi/software/%{name}-%{version}.tar.gz
 # Source0-md5:	6ecd96c3cf6b204cfe5210d67f107bcb
 URL:		http://www.frantz.fi/software/gperiodic.php
-BuildRequires:	gtk+-devel
+BuildRequires:	gtk+2-devel >= 1:2.0
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Gperiodic displays a periodic table of the elements, allowing you to
@@ -25,7 +25,9 @@ układ i wyświetla szczegółowe informacje o pierwiastkach.
 %setup -q
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} `pkg-config --cflags gtk+-2.0` -I. -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README ChangeLog NEWS AUTHORS 
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
